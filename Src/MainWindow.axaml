@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="560"
+        Width="800" Height="600"
+        x:Class="Violet.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        Icon="avares://Violet/Assets/Icon/Icon.ico"
+        Title="Violet"
+        >
+        <Grid Margin="{Binding $parent[Window].OffScreenMargin}" RowDefinitions="auto, *">
+                <Grid ColumnDefinitions="Auto,*" IsHitTestVisible="False" Background="Black">
+                        <Image Grid.Column="0" VerticalAlignment="Center" Source="avares://Violet/Assets/Icon/Icon.ico" Width="18" Margin="5,6,5,6"></Image>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="12">Violet</TextBlock>
+                </Grid>
+                <Grid Background="#222222" Grid.Row="1"> 
+                        <Grid x:Name="MainContainer"
+                              ClipToBounds="True"
+                              PointerPressed="MainContainer_PointerPressed"
+                              PointerMoved="MainContainer_PointerMoved"
+                              PointerReleased="MainContainer_PointerReleased"/>
+                </Grid>
+        </Grid>
+</Window>
